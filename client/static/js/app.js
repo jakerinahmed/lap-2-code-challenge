@@ -1,5 +1,5 @@
 function getAllEntries() {
-    fetch('localhost:3000/posts')
+    fetch('http://localhost:3000/posts')
         .then(r => r.json())
         .then(appendEntries)
         .catch(console.warn)
@@ -33,7 +33,7 @@ function appendEntry(entryData) {
     cardBody.appendChild(authorName)
     cardBody.appendChild(story)
 
-    const previousPosts = document.getElementsByClassName('previous-posts')
+    const previousPosts = document.querySelector('.previous-posts')
     previousPosts.append(newDiv)
 }
 
@@ -41,19 +41,15 @@ function submitEntry(e) {
 
     e.preventDefault();
 
-    const postTitle = document.getElementById('post-title')
-    const postAuthor = document.getElementById('post-author')
-    const postStory = document.getElementById('post-story')
-
-    if (!e.target.postTitle.value && !e.target.postAuthor.value && !e.target.postStory.value) {
-        postStory.placeholder = "Write something before submitting!"
-        postTitle.placeholder = "Enter a title"
-        postAuthor.placeholder = "Enter your name"
+    if (!e.target.postTitle.value || !e.target.postAuthor.value || !e.target.postStory.value) {
+        document.querySelector('#postTitle').placeholder = "Enter a title!"
+        document.querySelector('#postAuthor').placeholder = "Enter your name!"
+        document.querySelector('#postStory').placeholder = "Write something!"
     }
     else {
         const entryData = {
             title: e.target.postTitle.value,
-            author: e.target.postAuthor.value,
+            name: e.target.postAuthor.value,
             story: e.target.postStory.value
         };
 
@@ -65,9 +61,8 @@ function submitEntry(e) {
             }
         };
 
-        fetch('localhost:3000/posts', options)
+        fetch('http://localhost:3000/posts', options)
             .then(r => r.json())
-            .then(redirect)
             .catch(console.warn)
     }
 
@@ -75,3 +70,5 @@ function submitEntry(e) {
 
 const publishBtn = document.querySelector('#new-post-form')
 publishBtn.addEventListener('submit', submitEntry)
+
+getAllEntries()
