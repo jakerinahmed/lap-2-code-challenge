@@ -1,0 +1,36 @@
+.form-div {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    /* background-color: brown; */
+}
+
+.form-input {
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
+
+.title-input {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+.name-input {
+    font-size: 15px;
+}
+
+.story-input {
+    font-size: 20px;
+}
+
+.publish-btn {
+    background-color: transparent;
+    font-size: bold;
+    font-size: 20;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid black;
+    border-radius: 20px 20px 20px 20px;
+}
