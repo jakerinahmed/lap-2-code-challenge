@@ -34,3 +34,12 @@
     border: 2px solid black;
     border-radius: 20px 20px 20px 20px;
 }
+
+.card {
+    border: none;
+}
+
+.previous-posts {
+    display: flex;
+    justify-content: center;
+}
