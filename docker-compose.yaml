@@ -1,0 +1,16 @@
+version: '3'
+services:
+  api:
+    image: node:16.16.0
+    working_dir: /code
+    volumes:
+      - type: bind
+        source: ./api
+        target: /code
+
+  db:
+    image: postgres
+    environment: 
+      - POSTGRES_USER=futureproof
+    volumes:
+      - "./db/migrations:/docker-entrypoint-initdb.d/:ro"
