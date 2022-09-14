@@ -22,7 +22,7 @@ function appendEntry(entryData) {
 
     const authorName = document.createElement('h6')
     authorName.className = "card-subtitle mb-2 text-muted"
-    authorName.textContent = entryData.author
+    authorName.textContent = entryData.name
 
     const story = document.createElement('p')
     story.className = 'card-text'
@@ -39,9 +39,9 @@ function appendEntry(entryData) {
 
 function submitEntry(e) {
 
-    e.preventDefault();
-
     if (!e.target.postTitle.value || !e.target.postAuthor.value || !e.target.postStory.value) {
+        e.preventDefault();
+
         document.querySelector('#postTitle').placeholder = "Enter a title!"
         document.querySelector('#postAuthor').placeholder = "Enter your name!"
         document.querySelector('#postStory').placeholder = "Write something!"
