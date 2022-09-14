@@ -7,6 +7,7 @@
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <link rel="stylesheet" href="./static/css/style.css">
+<script defer src="./static/js/app.js"></script>
     <title>Journal</title>
 </head>
 <body>
@@ -15,18 +16,18 @@
         <form id="new-post-form">
             <div class="row mb-3">
                 <div class="col-sm-20">
-                  <input type="email" class="form-input title-input" id="post-title" placeholder="Title">
+                  <input type="title" class="form-input title-input" id="postTitle" placeholder="Title">
                   <input type="submit" value="PUBLISH" class="publish-btn">
                 </div>
               </div>
               <div class="row mb-3">
                 <div class="col-sm-20">
-                  <input type="email" class ="form-input name-input" id="post-author" placeholder="Your name">
+                  <input type="name" class ="form-input name-input" id="postAuthor" placeholder="Your name">
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-20">
-                    <textarea class="form-input story-input" id="post-story" rows="4" cols="50" placeholder="Your story"></textarea>
+                    <textarea class="form-input story-input" id="postStory" rows="4" cols="50" placeholder="Your story"></textarea>
                 </div>
               </div>
         </form>

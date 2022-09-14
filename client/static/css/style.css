@@ -41,5 +41,6 @@
 
 .previous-posts {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
