@@ -27,6 +27,14 @@ function appendEntry(entryData) {
     const story = document.createElement('p')
     story.className = 'card-text'
     story.textContent = entryData.story
+
+    newDiv.appendChild(cardBody)
+    cardBody.appendChild(title)
+    cardBody.appendChild(authorName)
+    cardBody.appendChild(story)
+
+    const previousPosts = document.getElementsByClassName('previous-posts')
+    previousPosts.append(newDiv)
 }
 
 function submitEntry(e) {
@@ -64,3 +72,6 @@ function submitEntry(e) {
     }
 
 };
+
+const publishBtn = document.querySelector('#new-post-form')
+publishBtn.addEventListener('submit', submitEntry)
